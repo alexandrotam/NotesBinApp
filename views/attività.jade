@@ -1,0 +1,179 @@
+html
+    head
+        style.
+            p.primo{
+                border-bottom: 5px solid #000;
+                margin-bottom: 40px;
+            }
+            button{
+                color: white;
+                background-color: rgb(0, 128, 204);
+                font-size: 200%;
+                width: 50%;
+                box-shadow: 5px 5px black;
+                border: 2px solid black;
+                border-radius: 7px;
+                position
+            }
+            button, h1, table {
+                font-family: Comic Sans MS;
+            }
+            #effectTool
+            {
+                width: 240px;
+                height: 170px;
+                padding: 0.4em;
+                position: absolute;
+            }
+            #effectAccount
+            {
+                width: 240px;
+                height: 170px;
+                padding: 0.4em;
+                position: absolute;
+            }
+            div.primo{
+                border-bottom: 5px solid #000;
+                margin-bottom: 2px;
+            }
+            #tableTool {
+                position: relative;
+                left: 40px;
+                top: -40px;
+                font-size: 20;
+            }
+            #tableUtente {
+                position: relative;
+                right: 200px;
+                top: -20px;
+                font-size: 20;
+            }
+            #bottoneAccount {
+                width: 70px;
+                height: 70px;
+                background-image: url('./images/user.png');
+                border-radius: 50px 50px;
+                box-shadow: 5px 5px 5px 5px rgb(0,0,0);
+            }
+        script(src='./js/jquery-1.12.4.js')
+        script(src='./js/jquery-ui.js')
+        script(src='./js/apri.js')
+        script.
+            $( function() {
+                // run the currently selected effect
+                function runEffect() {
+                    /*
+                    // get effect type from
+                    var selectedEffect = $( "#effectTypes" ).val();
+                    // Most effect types need no options passed by default
+                    var options = {};
+                    // some effects have required parameters
+                    if ( selectedEffect === "scale" ) {
+                    options = { percent: 50 };
+                    } else if ( selectedEffect === "size" ) {
+                    options = { to: { width: 280, height: 185 } };
+                    }
+                    // Run the effect
+                    */
+                    var options = {};
+                    $( "#effectTool" ).show( "fade", options, 500, callback );
+                };
+                function runEffect1() {
+                    /*
+                    // get effect type from
+                    var selectedEffect = $( "#effectTypes" ).val();
+                    // Most effect types need no options passed by default
+                    var options = {};
+                    // some effects have required parameters
+                    if ( selectedEffect === "scale" ) {
+                    options = { percent: 50 };
+                    } else if ( selectedEffect === "size" ) {
+                    options = { to: { width: 280, height: 185 } };
+                    }
+                    // Run the effect
+                    */
+                    var options1 = {};
+                    $( "#effectAccount" ).show( "fade", options1, 500, callback1 );
+                };
+                //callback function to bring a hidden box back
+                function callback() {
+                    setTimeout(function() {
+                        $( "#effectTool:visible" ).removeAttr( "style" ).fadeOut();
+                    }, 5000 );
+                };
+                function callback1() {
+                    setTimeout(function() {
+                        $( "#effectAccount:visible" ).removeAttr( "style" ).fadeOut();
+                    }, 5000 );
+                };
+                // Set effect from select menu value
+                $( "#bottoneTool" ).on( "click", function() {
+                    runEffect();
+                });
+                $( "#bottoneAccount" ).on( "click", function() {
+                    runEffect1();
+                });
+                $( "#effectTool" ).hide();
+                $( "#effectAccount" ).hide();
+            } );
+    body(vlink='#000000', link='#000000', alink='#000000')
+        div(style='float:left; height:100%; width: 20%; background-color:#008000; position: absolute; left: 0px; top: 0px;', align='center')
+            br
+            br
+            button#bottoneTool.ui-state-default.ui-corner-all(type='button')
+                img(src='./images/new.gif', style='vertical-align: -10%;', width='30%', height='30%')
+                |  New
+            br
+            #tableTool.toggler
+                #effectTool.ui-widget-content.ui-corner-all
+                    table(style='border: 5px solid black; z-index: 1; background-color: white;', width='80%')
+                        tbody
+                            tr
+                                td
+                                    img(src='./images/file.png', style='vertical-align: middle;', width='20px')
+                                    a(href="javascript:apri_upload('upload.html');") Carica un file
+                            tr
+                                td
+                                    img(src='./images/upload-folder.png', style='vertical-align: middle;', height='20px')
+                                    |  Carica una cartella
+                            tr
+                                td(style='border-top: 5px solid black;')
+                                    img(src='./images/folder.jpg', style='vertical-align: middle;', width='20px')
+                                    |  Cartella
+            h1(align='center')
+                a(href='attività.html', target='dashboard', style='text-decoration: none;') Attività
+            h1(align='center')
+                a(href='cerca.html', target='dashboard', style='text-decoration: none;') Cerca
+            h1(align='center')
+                a(href='myfile.html', target='dashboard', style='text-decoration: none;') I miei file
+            h1(align='center')
+                a(href='download.html', target='dashboard', style='text-decoration: none;') Download
+            p.primo
+            h1(align='center')
+                a(href='feedback.html', target='dashboard', style='text-decoration: none;') Feedback
+        div(style='float:right; height:100%; width:80%;')
+            table(width='100%')
+                tbody
+                    tr
+                        td(width='85%')
+                            p(align='center')
+                                img(src='./images/Logo_NBA_1.jpg', width='35%', height='75%')
+                        td(align='right')
+                            button#bottoneAccount.ui-state-default.ui-corner-all(type='button')
+                            #tableUtente.toggler
+                                #effectAccount.ui-widget-content.ui-corner-all
+                                    table(style='border: 5px solid black;  z-index: 1; background-color: white;', width='135%')
+                                        tbody
+                                            tr
+                                                td
+                                                    img(src='./images/account.jpg', style='vertical-align: middle;', width='10%', height='10%')
+                                                    | Account
+                                            tr
+                                                td
+                                                    img(src='./images/logout.png', style='vertical-align: middle;', width='10%', height='10%')
+                                                    | Logout
+                                            tr
+                                                td
+                                                    img(src='./images/contattaci.png', style='vertical-align: middle;', width='10%', height='10%')
+                                                    a(href='mailto:aletarallo92@hotmail.it') Contattaci
+            .primo

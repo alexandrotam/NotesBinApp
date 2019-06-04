@@ -1,0 +1,84 @@
+html
+  head
+    style.
+      .testo{
+        width: 50%;
+        font-size: large;
+        font-family:Comic Sans MS;
+        border: solid black;
+      }
+      button{
+        color: white;
+        background-color: rgb(0, 128, 204);
+        font-family:Comic Sans MS;
+        font-size: large;
+        width: 50%;
+        box-shadow: 5px 5px black;
+        border: 2px solid black;
+        border-radius: 7px;
+      }
+    script(src='./js/facebook.js')
+    script(src='./js/apri.js')
+    script.
+      function termini(){
+        // Get the checkbox
+        var checkBox = document.getElementById("check");
+        // Get the output text
+        var text = document.getElementById("terms");
+        // If the checkbox is checked, display the output text
+        if (checkBox.checked == true){
+          text.value = "yes";
+        } else {
+          text.value = "no";
+        }
+      }
+    script(src='js/fixedbackground.js', type='text/javascript')
+  body(onload="fixedBackground('./images/sfondo.jpg');")
+    div(style='float:left;')
+    div(style='float:right; height:100%; width: 40%; background-color:#008000;', align='center')
+      form(action='/registrati.html', method='POST')
+        a(href='login.html', style='text-decoration: none;')
+          img(src='./images/login.jpg', width='20%', height='5%', align='right')
+        br
+        br
+        br
+        br
+        h1(align='center')
+          font(face='Comic sans MS', color='white') Registrati
+        div(align='center')
+          input#nome.testo(type='text', name='nome', placeholder='Nome')
+        br
+        div(align='center')
+          input#cognome.testo(type='text', name='cognome', placeholder='Cognome')
+        br
+        div(align='center')
+          input#email.testo(type='text', name='email', placeholder='Email')
+        br
+        div(align='center')
+          input#password.testo(type='password', name='password', placeholder='Password')
+        br
+        div(align='center')
+          input#confermaPassword.testo(type='password', name='confermaPassword', placeholder='Conferma Password')
+        br
+        br
+        h2(style='font-size:105%;', align='center')
+          input#check(type='checkbox', name='check', style='position: inherit;', onclick='termini()')
+          |  Accetto i
+          a(href="javascript:apri('contratto.html');") Termini Notes Bin App
+        div(align='center')
+          label#mexerrore(name='mexerrore', style='color:white; font-size:130%;')!=messaggio
+        br
+        br
+        div(align='center')
+          button#registrati(type='submit') Registrati
+        br
+        #status(align='center')
+          button(type='button', style='background-color:white; color:black;')
+            img(src='./images/fb.png', style='vertical-align: middle;', width='10%', height='10%')
+            |   Iscriviti con Facebook
+        br
+        div(align='center')
+          button(type='button', style='background-color:white; color:black;')
+            img(src='./images/google.png', style='vertical-align: middle;', width='10%', height='10%')
+            |  Iscriviti con Google
+        input#terms(type='text', name='terms', style='visibility: hidden;', value='no')

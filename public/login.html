@@ -1,0 +1,55 @@
+<html>
+	<head>
+  		<style>
+			#testo{
+			width: 50%;
+			font-size: large;
+			font-family:Comic Sans MS;
+			border: solid black;
+			}
+			
+			button{
+			color: white; 
+			background-color: rgb(0, 128, 204); 
+			font-family:Comic Sans MS;
+			font-size: large;
+			width: 50%;
+			box-shadow: 5px 5px black;
+			border: 2px solid black;
+			border-radius: 7px;
+			}
+		</style>
+ <script src="js/fixedbackground.js" type="text/javascript"></script>
+
+	</head>
+	<body onload="fixedBackground('./images/sfondo.jpg');" link="#ffffff" vlink="#ffffff" alink="#ffffff"> 
+		<div style="float:left;">
+		
+		</div>
+		<div style="float:right; height:100%; width: 40%; background-color:#008000;" align="center">
+			<form action="/home" method="POST">
+		<a href="registrati.html"  style="text-decoration: none;"><img src="./images/registrati.jpg" width="20%" height="5%" align="right"></img></a>
+		<br><br><br><br>
+	
+	
+		<h1 align="center"><font face="Comic sans MS" color="white">Login</font></h1>
+	
+		<div align="center"><input type="text" name="email" placeholder="Email" id="testo"></div><br>
+		<div align="center"><input type="password" name="password" placeholder="Password" id="testo"></div><br>
+		
+		
+		<br>
+				<div  align="center" ><label id="mexerrore" name="mexerrore" style="color:white; font-size:130%;"></label></div>
+
+		<br><br>
+   
+   
+		<div align="center"><button type="submit" >Accedi</button></a></div><br>
+		<div align="center"><button type="button" style="background-color:white; color:black;"><img src="./images/fb.png" width="10%" height="10%" style="vertical-align: middle;">  Accedi con Facebook</img></button></div><br>
+		<div align="center"><button type="button" style="background-color:white; color:black;"><img src="./images/google.png" width="10%" height="10%" style="vertical-align: middle;"> Accedi con Google</img></button></div>
+		</div>
+  </form>
+ 
+
+	</body>
+ </html>

@@ -1,0 +1,196 @@
+<html>
+  <head>
+	<style>
+		p.primo{
+			border-bottom: 5px solid #000;
+			margin-bottom: 40px;
+		}
+		button{
+			color: white; 
+			background-color: rgb(0, 128, 204);
+			font-size: 200%;
+			width: 50%;
+			box-shadow: 5px 5px black;
+			border: 2px solid black;
+			border-radius: 7px;
+			position
+		}
+		
+		button, h1, table {
+			font-family: Comic Sans MS;
+		}
+			
+		#effectTool
+		{
+			width: 240px;
+			height: 170px;
+			padding: 0.4em;
+			position: absolute;
+		}
+		#effectAccount
+		{
+			width: 240px;
+			height: 170px;
+			padding: 0.4em;
+			position: absolute;
+		}
+		
+		div.primo{
+			border-bottom: 5px solid #000;
+			margin-bottom: 2px;
+		}
+		
+		#tableTool {
+			position: relative;
+			left: 40px;
+			top: -40px;
+			font-size: 20;
+		}
+		#tableUtente {
+				position: relative;
+				right: 200px;
+				top: -20px;
+				font-size: 20;
+			}
+		#bottoneAccount {
+				width: 70px;
+				height: 70px;
+				background-image: url('./images/user.png');
+				border-radius: 50px 50px;
+				box-shadow: 5px 5px 5px 5px rgb(0,0,0);
+			}	
+	</style>
+	<script src="./js/jquery-1.12.4.js"></script>
+	<script src="./js/jquery-ui.js"></script>
+	<script src="./js/apri.js"></script>
+	
+	<script>
+		$( function() {
+			// run the currently selected effect
+			function runEffect() {
+				/*
+				// get effect type from
+				var selectedEffect = $( "#effectTypes" ).val();
+
+				// Most effect types need no options passed by default
+				var options = {};
+				// some effects have required parameters
+				if ( selectedEffect === "scale" ) {
+					options = { percent: 50 };
+				} else if ( selectedEffect === "size" ) {
+					options = { to: { width: 280, height: 185 } };
+				}
+
+				// Run the effect
+				*/
+				var options = {};
+				$( "#effectTool" ).show( "fade", options, 500, callback );
+			};
+			function runEffect1() {
+				/*
+				// get effect type from
+				var selectedEffect = $( "#effectTypes" ).val();
+
+				// Most effect types need no options passed by default
+				var options = {};
+				// some effects have required parameters
+				if ( selectedEffect === "scale" ) {
+					options = { percent: 50 };
+				} else if ( selectedEffect === "size" ) {
+					options = { to: { width: 280, height: 185 } };
+				}
+
+				// Run the effect
+				*/
+				var options1 = {};
+				$( "#effectAccount" ).show( "fade", options1, 500, callback1 );
+			};
+
+			//callback function to bring a hidden box back
+			function callback() {
+				setTimeout(function() {
+					$( "#effectTool:visible" ).removeAttr( "style" ).fadeOut();
+				}, 5000 );
+			};
+			function callback1() {
+				setTimeout(function() {
+					$( "#effectAccount:visible" ).removeAttr( "style" ).fadeOut();
+				}, 5000 );
+			};
+
+			// Set effect from select menu value
+			$( "#bottoneTool" ).on( "click", function() {
+				runEffect();
+			});
+			$( "#bottoneAccount" ).on( "click", function() {
+				runEffect1();
+			});
+			$( "#effectTool" ).hide();
+			$( "#effectAccount" ).hide();
+		} );
+	</script>
+  </head>
+  <body link="#000000" vlink="#000000" alink="#000000"> 
+	
+	
+	<div style="float:left; height:100%; width: 20%; background-color:#008000; position: absolute; left: 0px; top: 0px;" align="center">
+		<br><br>
+	
+		<button type="button" id="bottoneTool" class="ui-state-default ui-corner-all">
+			<img src="./images/new.gif" width="30%" height="30%" style="vertical-align: -10%;"  ></img> New
+		</button>
+	<br>
+	
+	<div class="toggler" id="tableTool">
+		<div id="effectTool" class="ui-widget-content ui-corner-all">
+			<table style="border: 5px solid black; z-index: 1; background-color: white;" width="80%">
+				<tr><td><img src="./images/file.png" width="20px" style="vertical-align: middle;"><a href="javascript:apri('upload.html');">Carica un file</a></img></td></tr>
+				<tr><td><img src="./images/upload-folder.png" height="20px" style="vertical-align: middle;"> Carica una cartella</img></td></tr>
+				<tr><td style="border-top: 5px solid black;"><img src="./images/folder.jpg" width="20px" style="vertical-align: middle;"> Cartella</img></td></tr>
+			</table>
+		</div>
+	</div>
+
+	<h1 align="center"><a href="attività.html" target="dashboard" style="text-decoration: none;">Attività</a></h1>
+	<h1 align="center"><a href="cerca.html" target="dashboard" style="text-decoration: none;">Cerca</a></h1>
+	<h1 align="center"><a href="myfile.html" target="dashboard" style="text-decoration: none;">I miei file</a></h1>
+	<h1 align="center"><a href="download.html" target="dashboard" style="text-decoration: none;">Download</a></h1>
+	<p class="primo"></p>
+	<h1 align="center"><a href="feedback.html" target="dashboard" style="text-decoration: none;">Feedback</a></h1>
+	
+	</div>
+	
+	<div style="float:right; height:100%; width:80%;">
+	<table width="100%" >
+			<tr>
+				<td width="85%">
+				<p align="center">	<img src="./images/Logo_NBA_1.jpg"  width="35%" height="75%"></p>
+				</td>
+				<td align="right">
+					<button type="button" id="bottoneAccount" class="ui-state-default ui-corner-all"></button>
+					
+					
+					<div class="toggler" id="tableUtente">
+						<div id="effectAccount" class="ui-widget-content ui-corner-all">
+							<table style="border: 5px solid black;  z-index: 1; background-color: white;" width="135%">
+								<tr><td><img src="./images/account.jpg" width="10%" height="10%" style="vertical-align: middle;">Account</img></td></tr>
+								<tr><td><img src="./images/logout.png" width="10%" height="10%" style="vertical-align: middle;">Logout</img></td></tr>
+								<tr><td><img src="./images/contattaci.png" width="10%" height="10%" style="vertical-align: middle;"><a HREF="mailto:aletarallo92@hotmail.it">Contattaci</a></img></td></tr>
+							</table>
+						</div>
+					</div>
+
+					
+					
+					
+				</td>
+			</tr>
+		</table>
+		<div class="primo"></div>
+	 </div>
+
+	
+ </body>
+</html>
+
+

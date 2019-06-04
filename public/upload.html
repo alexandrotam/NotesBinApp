@@ -1,0 +1,48 @@
+<html>
+<head>
+<style>
+		.testo{
+		width: 50%;
+		font-size: large;
+		font-family:Comic Sans MS;
+		border: solid black;
+		}
+		
+		.testo1{
+		width: 50%;
+		background-color: #008099;
+		font-size: large;
+		font-family:Comic Sans MS;
+		border: solid black;
+		}
+		
+		label{
+		color: Black; 
+		font-family:Comic Sans MS;
+		font-size: large;
+		width: 50%;
+		}
+</style>
+</head>
+<body bgcolor=#008000>
+<form ref='uploadForm' id='uploadForm' action='/upload' method='post'encType="multipart/form-data">
+    <div align=center><br><br><input type="file" name="sampleFile" class="testo1">
+    <br><br>
+	<label name="Università">Università</label><br>
+	<input type="text" id="Università" name="Università" class="testo"></label><br>
+	<label name="Facoltà">Facoltà</label><br>
+	<input type="text" id="Facoltà" name="Facoltà" class="testo"></label><br>
+	<label name="Corso di Laurea">Corso di Laurea</label><br>
+	<input type="text" id="CorsodiLaurea" name="CorsodiLaurea" class="testo"></label><br>
+	<label name="Insegnamento">Insegnamento</label><br>
+	<input type="text" id="Insegnamento" name="Insegnamento" class="testo"></label><br>
+	<label name="Docente">Docente</label><br> 
+	<input type="text" id="Docente" name="Docente" class="testo"></label><br>
+	<label name="Data Lezione">Data Lezione</label><br>
+	<input type="text" id="DataLezione" name="DataLezione" class="testo"></label><br>
+	<br><br>
+	<input type='submit' value='Upload!' class="testo1">
+	</div>
+</form>
+</body>
+</html>
